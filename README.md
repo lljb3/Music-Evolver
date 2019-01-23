@@ -1,7 +1,7 @@
 # Music-Evolver
 Kake Multimedia and ProdHMD's WordPress small theme for musicians.
 
-Currently on version: 4.0.0!
+Currently on version: 3.0.0!
 
 ## Before Installation
 
