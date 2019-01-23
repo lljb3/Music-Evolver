@@ -1,0 +1,32 @@
+{
+  "name": "music-evolver",
+  "version": "3.0.0",
+  "description": "Kake Mutlimedia and ProdHMD's WordPress small theme for musicians.",
+  "main": "./assets/js/dist/site",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lljb3/Music-Evolver.git"
+  },
+  "keywords": [
+    "prodhmd",
+    "kakemultimedia",
+    "corporate",
+    "starkers",
+    "webpack",
+    "react",
+    "clean",
+    "basic"
+  ],
+  "author": "James Burrell",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lljb3/Music-Evolver/issues"
+  },
+  "homepage": "https://github.com/lljb3/Music-Evolver#readme",
+  "dependencies": {
+    "npm": "^6.6.0"
+  }
+}
