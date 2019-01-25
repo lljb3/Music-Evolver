@@ -334,7 +334,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 			/* ==============================
 				Header
 			============================== */
-			$corp_options = get_option('corp_theme_option');
+			$evolver_options = get_option('evolver_theme_option');
 			$this->sections[] = array(
 	            'title'     => __('Header', 'redux-framework-demo'),
 	            'desc'      => __('The header. Make sure to double check every section.', 'redux-framework-demo'),
