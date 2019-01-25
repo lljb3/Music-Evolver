@@ -6,8 +6,8 @@ import '../lib/modernizr';
 import '../lib/retina';
 import '../lib/flowtype';
 import '../lib/isotope.pkgd';
-import '../lib/fancybox';
-import '../lib/plyr';
+import '../lib/fancybox.min';
+import '../lib/plyr.min';
 import '../lib/smooth-scroll.polyfills';
 
 // Import CSS
