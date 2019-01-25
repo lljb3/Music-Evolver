@@ -2,7 +2,7 @@
   "name": "music-evolver",
   "version": "3.0.0",
   "description": "Kake Mutlimedia and ProdHMD's WordPress small theme for musicians.",
-  "main": "./assets/js/dist/site",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "test",
     "build": "webpack",
