@@ -1,13 +1,12 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     mode: 'development',
     resolve: {
         alias: {
-            swup: path.resolve(__dirname, 'assets/js/lib/swup.js'),
             smoothscroll: path.resolve(__dirname, 'assets/js/lib/smooth-scroll.polyfills.js')
         }
     },
@@ -20,6 +19,18 @@ module.exports = {
     },
     externals: {
         jquery: 'jQuery'
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                extractComments: true,
+                uglifyOptions: {
+                    output: {
+                        comments: false,
+                    },
+                },
+            }),
+        ],
     },
     module: {
         rules: [
@@ -38,14 +49,7 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
-                        {
-                            loader: 'css-loader',
-                            options: {
-                                importLoaders: 1,
-                                sourceMap: true,
-                                minimize: true
-                            }
-                        }
+                        { loader: 'css-loader' }
                     ]
                 })
             },
@@ -69,43 +73,15 @@ module.exports = {
             }
         ]
     },
-    optimization: {
-        minimizer: [
-            new UglifyJsPlugin({
-                sourceMap: false,
-                minify(file, sourceMap) {
-                    const uglifyJsOptions = {
-                        ie8: false,
-                        ecma: 8,
-                        mangle: true,
-                        output: {
-                            comments: false,
-                            beautify: false
-                        },
-                        warnings: false
-                    };
-                    if (sourceMap) {
-                        uglifyJsOptions.sourceMap = {
-                            content: sourceMap,
-                        };
-                    }
-                    return require('terser').minify(file, uglifyJsOptions);
-                }
-            }),
-            new OptimizeCssAssetsPlugin({
-                assetNameRegExp: /\.optimize\.css$/g,
-                cssProcessor: require('cssnano'),
-                cssProcessorPluginOptions: {
-                    preset: ['default', { discardComments: { removeAll: true } }],
-                },
-                canPrint: true
-            })
-        ]
-    },
     plugins: [
-        new ExtractTextPlugin({
-            filename: '../css/style.min.css',
-            allChunks: true,
+        new ExtractTextPlugin('../css/style.min.css'),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.optimize\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+                preset: ['default', { discardComments: { removeAll: true } }],
+            },
+            canPrint: true
         })
     ]
 }
