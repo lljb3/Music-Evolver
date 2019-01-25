@@ -334,7 +334,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 			/* ==============================
 				Header
 			============================== */
-			$evolver_options = get_option('evolver_theme_option');
+			$corp_options = get_option('corp_theme_option');
 			$this->sections[] = array(
 	            'title'     => __('Header', 'redux-framework-demo'),
 	            'desc'      => __('The header. Make sure to double check every section.', 'redux-framework-demo'),
@@ -354,115 +354,6 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'transparent'	=> false,
 						'background-size'	=> false,
 					),
-					// Collapsable Header Options
-					array(
-						'id'   =>'section-start',
-						'title' => __('Collapsable Header Options', 'redux-framework-demo'),
-						'subtitle' => __('Update the collapsable header with these options.', 'redux-framework-demo'),
-						'type' => 'section',
-						'indent' => true,
-					),
-					array(
-						'id'	=> 'collapsable-header-button',
-						'type'	=> 'checkbox',
-						'title'	=> __('Collapsable Header', 'redux-framework-demo'),
-						'subtitle'	=> __('Make Header on Home Page Collapsable', 'redux-framework-demo'),
-						'desc'	=> __('', 'redux-framework-demo'),
-						'default'	=> 0
-					),
-					array(
-						'id'        => 'collapsable-header-logo',
-						'type'      => 'media',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 0) ? true : false,
-						'title'     => __('Collapsable Logo', 'redux-framework-demo'),
-						'compiler'  => 'true',
-						'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-						'desc'      => __('Image will be displayed at 50% width & height for Retina-Ready purpose. For example: 300x60 image shows at 150x30. <br /> Also, Max. height: 50px. Upload your logo accordingly.', 'redux-framework-demo'),
-						'subtitle'  => __('', 'redux-framework-demo'),
-					),
-					array(
-						'id'   => 'color-collapsable-header-background',
-						'type' => 'background',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 0) ? true : false,
-						'title' => __('Collapsable Header Background Color', 'redux-framework-demo'),
-						'subtitle' => __('Change Header Background Color'),
-						'output' => array('#collapse-menu #navbar-collapse.panel-collapse'),
-						'background-repeat'	=> false,
-						'background-attachment'	=> false,
-						'background-position'	=> false,
-						'background-image'	=> false,
-						'transparent'	=> false,
-						'background-size'	=> false,
-					),
-					array(
-						'id'	=> 'color-collapsable-header',
-						'type'	=> 'color',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 0) ? true : false,
-						'title'	=> __('Collapsable Header Color', 'redux-framework-demo'), 
-						'subtitle'	=> __('Collapsable Header Color (default: #ffffff)', 'redux-framework-demo'),
-						'default'	=> '#ffffff',
-						'output' => array('#collapse-menu'),
-						'validate'	=> 'color',
-						'transparent'	=> false,
-					),
-					array(
-						'id'	=> 'typography-collapsable-header',
-						'type'	=> 'typography',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 0) ? true : false,
-						'title'	=> __('Typography Collapsable Header', 'redux-framework-demo'),
-						'google'	=> true,
-						'fonts'		=> $custom_fonts,
-						'ext-font-css' => $theme_url . '/style.css',
-						'font-backup'	=> true,
-						'font-style'	=> true,
-						'font-weight'	=> true,
-						'text-align'	=> false,
-						'text-collapsableform' => true,
-						//'subsets'	=> false, // Only appears if google is true and subsets not set to false
-						'font-size'	=> true,
-						'line-height'	=> true,
-						'word-spacing'	=> true, // Defaults to false
-						'letter-spacing'	=> true, // Defaults to false
-						'color'	=> true,
-						//'preview'	=> false, // Disable the previewer
-						'all_styles' => true, // Enable all Google Font style/weight variations to be added to the page
-						'output' => array('#collapse-menu'), // An array of CSS selectors to apply this font style to dynamically
-						'units'	=> 'em', // Defaults to px
-						'subtitle'	=> __('', 'redux-framework-demo'),
-						'default'	=> array(
-							'font-family'	=> 'Roboto',
-							'font-style'	=> '400',
-							'google'	=> true,
-							'color'	=> '#242424'
-						),
-					),
-					array(
-						'id'	=> 'color-collapsable-header-link',
-						'type'	=> 'color',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 0) ? true : false,
-						'title'	=> __('Collapsable Header Link Color', 'redux-framework-demo'),
-						'output'	=> array('#collapse-menu a,#collapse-menu a:visited,#collapse-menu a:focus,#collapse-menu .fab,#collapse-menu .fab:visited,#collapse-menu .fab:focus'),
-						'subtitle'	=> __('Collapsable Header Link Color (default: #70b9a0)', 'redux-framework-demo'),
-						'default'	=> '#70b9a0',
-						'validate'	=> 'color',
-						'transparent'	=> false,
-					),
-					array(
-						'id'	=> 'color-collapsable-header-link-hover',
-						'type'	=> 'color',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 0) ? true : false,
-						'title'	=> __('Collapsable Content Hover Link Color', 'redux-framework-demo'), 
-						'output'	=> array('#collapse-menu a:hover,#collapse-menu a:active,#collapse-menu .fab:hover,#collapse-menu .fab:active'),
-						'subtitle'	=> __('Collapsable Content Hover Link Color (default: #70b9a0)', 'redux-framework-demo'),
-						'default'	=> '#70b9a0',
-						'validate'	=> 'color',
-						'transparent'	=> false,
-					),
-					array(
-						'id'     => 'section-end',
-						'type'   => 'section',
-						'indent' => false,
-					),
 					// Trans Header Options
 					array(
 						'id'   =>'section-start',
@@ -473,16 +364,16 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					),
 					array(
 						'id'	=> 'transitional-header-button',
-						'type'	=> 'checkbox',
+						'type'	=> 'switch',
 						'title'	=> __('Transitional Header', 'redux-framework-demo'),
 						'subtitle'	=> __('Make Header on Home Page Transitional', 'redux-framework-demo'),
 						'desc'	=> __('', 'redux-framework-demo'),
-						'default'	=> 1
+						'default'	=> true
 					),
 					array(
 						'id'        => 'trans-header-logo',
 						'type'      => 'media',
-						'hidden' => ($evolver_options['transitional-header-button'] == 0) ? true : false,
+						'required' => array('transitional-header-button', 'equals', true),
 						'title'     => __('Transitional Logo', 'redux-framework-demo'),
 						'compiler'  => 'true',
 						'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
@@ -492,7 +383,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'   => 'color-trans-header-border',
 						'type' => 'border',
-						'hidden' => ($evolver_options['transitional-header-button'] == 0) ? true : false,
+						'required' => array('transitional-header-button', 'equals', true),
 						'title' => __('Trans Header Border Color', 'redux-framework-demo'),
 						'subtitle' => __('Change Trans Header Border Color'),
 						'desc'	=> __('', 'redux-framework-demo'),
@@ -513,7 +404,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'   => 'color-trans-header-background',
 						'type' => 'background',
-						'hidden' => ($evolver_options['transitional-header-button'] == 0) ? true : false,
+						'required' => array('transitional-header-button', 'equals', true),
 						'title' => __('Trans Header Background Color', 'redux-framework-demo'),
 						'subtitle' => __('Change Header Background Color'),
 						'output' => array('#trans-menu.large'),
@@ -521,13 +412,13 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'background-attachment'	=> false,
 						'background-position'	=> false,
 						'background-image'	=> false,
-						'transparent'	=> false,
+						'transparent'	=> true,
 						'background-size'	=> false,
 					),
 					array(
 						'id'	=> 'color-trans-header',
 						'type'	=> 'color',
-						'hidden' => ($evolver_options['transitional-header-button'] == 0) ? true : false,
+						'required' => array('transitional-header-button', 'equals', true),
 						'title'	=> __('Trans Header Color', 'redux-framework-demo'), 
 						'subtitle'	=> __('Trans Header Color (default: #ffffff)', 'redux-framework-demo'),
 						'default'	=> '#ffffff',
@@ -538,7 +429,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'typography-trans-header',
 						'type'	=> 'typography',
-						'hidden' => ($evolver_options['transitional-header-button'] == 0) ? true : false,
+						'required' => array('transitional-header-button', 'equals', true),
 						'title'	=> __('Typography Trans Header', 'redux-framework-demo'),
 						'google'	=> true,
 						'fonts'		=> $custom_fonts,
@@ -569,7 +460,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'color-trans-header-link',
 						'type'	=> 'color',
-						'hidden' => ($evolver_options['transitional-header-button'] == 0) ? true : false,
+						'required' => array('transitional-header-button', 'equals', true),
 						'title'	=> __('Trans Header Link Color', 'redux-framework-demo'),
 						'output'	=> array('#trans-menu.large a,#trans-menu.large a:visited,#trans-menu.large a:focus,#trans-menu.large .fab,#trans-menu.large .fab:visited,#trans-menu.large .fab:focus'),
 						'subtitle'	=> __('Trans Header Link Color (default: #70b9a0)', 'redux-framework-demo'),
@@ -580,10 +471,152 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'color-trans-header-link-hover',
 						'type'	=> 'color',
-						'hidden' => ($evolver_options['transitional-header-button'] == 0) ? true : false,
+						'required' => array('transitional-header-button', 'equals', true),
 						'title'	=> __('Trans Content Hover Link Color', 'redux-framework-demo'), 
 						'output'	=> array('#trans-menu.large a:hover,#trans-menu.large a:active,#trans-menu.large .fab:hover,#trans-menu.large .fab:active'),
 						'subtitle'	=> __('Trans Content Hover Link Color (default: #70b9a0)', 'redux-framework-demo'),
+						'default'	=> '#70b9a0',
+						'validate'	=> 'color',
+						'transparent'	=> false,
+					),
+					array(
+						'id'     => 'section-end',
+						'type'   => 'section',
+						'indent' => false,
+					),
+					// Collapsable Header Options
+					array(
+						'id'   =>'section-start',
+						'title' => __('Collapsable Header Options', 'redux-framework-demo'),
+						'subtitle' => __('Update the collapsable header with these options. Will be overriden if Transitional header Options is turned on.', 'redux-framework-demo'),
+						'type' => 'section',
+						'indent' => true,
+					),
+					array(
+						'id'	=> 'collapsable-header-button',
+						'type'	=> 'switch',						
+						'title'	=> __('Collapsable Header', 'redux-framework-demo'),
+						'subtitle'	=> __('Make Header on Home Page Collapsable', 'redux-framework-demo'),
+						'desc'	=> __('', 'redux-framework-demo'),
+						'default'	=> false,
+					),
+					array(
+						'id'        => 'collapsable-header-logo',
+						'type'      => 'media',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title'     => __('Collapsable Logo', 'redux-framework-demo'),
+						'compiler'  => 'true',
+						'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+						'desc'      => __('Image will be displayed at 50% width & height for Retina-Ready purpose. For example: 300x60 image shows at 150x30. <br /> Also, Max. height: 50px. Upload your logo accordingly.', 'redux-framework-demo'),
+						'subtitle'  => __('', 'redux-framework-demo'),
+					),
+					array(
+						'id'   => 'color-collapsable-header-background',
+						'type' => 'background',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title' => __('Collapsable Header Background Color', 'redux-framework-demo'),
+						'subtitle' => __('Change Header Background Color'),
+						'output' => array('#collapse-menu'),
+						'background-repeat'	=> false,
+						'background-attachment'	=> false,
+						'background-position'	=> false,
+						'background-image'	=> false,
+						'transparent'	=> true,
+						'background-size'	=> false,
+					),
+					array(
+						'id'   => 'color-collapsable-header-border',
+						'type' => 'border',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title' => __('Collapsable Header Border Color', 'redux-framework-demo'),
+						'subtitle' => __('Change Trans Header Border Color'),
+						'desc'	=> __('', 'redux-framework-demo'),
+						'output' => array('#collapse-menu'),
+						'default'  => array(
+							'border-color'  => '#c8c8c8', 
+							'border-style'  => 'solid', 
+							'border-bottom' => '0px', 
+						),
+						'all' => false,
+						'left' => false,
+						'right' => false,
+						'top' => false,
+						'bottom' => true,
+						'style' => true,
+						'color' => true,
+					),
+					array(
+						'id'   => 'color-collapsable-panel-background',
+						'type' => 'color_rgba',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title' => __('Collapsable Panel Background Color', 'redux-framework-demo'),
+						'subtitle' => __('Change Header Background Color'),
+						'output' => array('background-color' => '#panel-navbar-collapse'),
+						'default'   => array(
+							'color'     => '#242424',
+							'alpha'     => .5
+						),
+					),
+					array(
+						'id'	=> 'color-collapsable-header',
+						'type'	=> 'color',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title'	=> __('Collapsable Header Color', 'redux-framework-demo'), 
+						'subtitle'	=> __('Collapsable Header Color (default: #ffffff)', 'redux-framework-demo'),
+						'default'	=> '#ffffff',
+						'output' => array('#collapse-menu'),
+						'validate'	=> 'color',
+						'transparent'	=> false,
+					),
+					array(
+						'id'	=> 'typography-collapsable-header',
+						'type'	=> 'typography',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title'	=> __('Typography Collapsable Header', 'redux-framework-demo'),
+						'google'	=> true,
+						'fonts'		=> $custom_fonts,
+						'ext-font-css' => $theme_url . '/style.css',
+						'font-backup'	=> true,
+						'font-style'	=> true,
+						'font-weight'	=> true,
+						'text-align'	=> false,
+						'text-collapsableform' => true,
+						//'subsets'	=> false, // Only appears if google is true and subsets not set to false
+						'font-size'	=> true,
+						'line-height'	=> true,
+						'word-spacing'	=> true, // Defaults to false
+						'letter-spacing'	=> true, // Defaults to false
+						'color'	=> true,
+						//'preview'	=> false, // Disable the previewer
+						'all_styles' => true, // Enable all Google Font style/weight variations to be added to the page
+						'output' => array('#collapse-menu,#panel-navbar-collapse'), // An array of CSS selectors to apply this font style to dynamically
+						'units'	=> 'em', // Defaults to px
+						'subtitle'	=> __('', 'redux-framework-demo'),
+						'default'	=> array(
+							'font-family'	=> 'Roboto',
+							'font-style'	=> '400',
+							'google'	=> true,
+							'color'	=> '#242424'
+						),
+					),
+					array(
+						'id'	=> 'color-collapsable-header-link',
+						'type'	=> 'color',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title'	=> __('Collapsable Header Link Color', 'redux-framework-demo'),
+						'output'	=> array('#panel-navbar-collapse a,#panel-navbar-collapse a:visited,#panel-navbar-collapse a:focus'),
+						'subtitle'	=> __('Collapsable Header Link Color (default: #70b9a0)', 'redux-framework-demo'),
+						'default'	=> '#70b9a0',
+						'validate'	=> 'color',
+						'transparent'	=> false,
+					),
+					array(
+						'id'	=> 'color-collapsable-header-link-hover',
+						'type'	=> 'color',
+						'required' => array('collapsable-header-button', 'equals', true),
+						'title'	=> __('Collapsable Content Hover Link Color', 'redux-framework-demo'), 
+						'output'	=> array('#panel-navbar-collapse a:hover,#panel-navbar-collapse a:active'),
+						'subtitle'	=> __('Collapsable Content Hover Link Color (default: #70b9a0)', 'redux-framework-demo'),
 						'default'	=> '#70b9a0',
 						'validate'	=> 'color',
 						'transparent'	=> false,
@@ -597,19 +630,17 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'   =>'section-start',
 						'title' => __('Header Options', 'redux-framework-demo'),
-						'subtitle' => __('Update the header with these options.', 'redux-framework-demo'),
+						'subtitle' => __('Update the header with these options. Acts as small menu for Transitional Header as well as regular header. Can be overriden by Collapsable Header.', 'redux-framework-demo'),
 						'type' => 'section',
 						'indent' => true,
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
 					),
 					array(
 						'id'   => 'color-header-border',
 						'type' => 'border',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
 						'title' => __('Header Border', 'redux-framework-demo'),
 						'subtitle' => __('Header Border'),
 						'desc'	=> __('', 'redux-framework-demo'),
-						'output' => array('#trans-menu.small, header .navbar, header .navbar .navbar-nav > ul > li ul.sub-menu, header .navbar nav > div > ul > li ul.sub-menu, #header-menu, header .dropdown-menu'),
+						'output' => array('#trans-menu.small, #header-menu'),
 						'default'  => array(
 							'border-color'  => '#c8c8c8', 
 							'border-style'  => 'solid', 
@@ -626,8 +657,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'color-header-background',
 						'type'	=> 'background',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
-						'output'	=> array('#trans-menu.small, header .navbar, header .navbar .navbar-nav > ul > li ul.sub-menu, header .navbar nav > div > ul > li ul.sub-menu, #header-menu, #trans-menu .mx-auto.d-md-block.d-lg-none .navbar-collapse, header .dropdown-menu'),
+						'output'	=> array('#trans-menu.small, #trans-menu .dropdown-menu, #header-menu, #header-menu .dropdown-menu, .navbar-collapse.show'),
 						'title'	=> __('Site Header Background Color', 'redux-framework-demo'),
 						'subtitle'	=> __('Site Header Background Color (default: #242424333)', 'redux-framework-demo'),
 						'default'	=> array( 'background-color' => '#242424333' ),
@@ -641,7 +671,6 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'color-header',
 						'type'	=> 'color',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
 						'title'	=> __('Site Header Color', 'redux-framework-demo'), 
 						'subtitle'	=> __('Site Header Color (default: #ffffff)', 'redux-framework-demo'),
 						'default'	=> '#ffffff',
@@ -651,7 +680,6 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'typography-header',
 						'type'	=> 'typography',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
 						'title'	=> __('Typography Header', 'redux-framework-demo'),
 						'google'	=> true,
 						'fonts'		=> $custom_fonts,
@@ -682,7 +710,6 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'color-header-link',
 						'type'	=> 'color',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
 						'title'	=> __('Site Header Link Color', 'redux-framework-demo'),
 						'output'	=> array('header a,header a:visited,header a:focus,header .fab,header .fab:visited,header .fab:focus,#header-container a,#header-container a:visited,#header-container a:focus,#trans-menu.small a,#trans-menu.small a:visited,#trans-menu.small a:focus'),
 						'subtitle'	=> __('Site Header Link Color (default: #70b9a0)', 'redux-framework-demo'),
@@ -693,7 +720,6 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					array(
 						'id'	=> 'color-header-link-hover',
 						'type'	=> 'color',
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
 						'title'	=> __('Site Content Hover Link Color', 'redux-framework-demo'), 
 						'output'	=> array('header a:hover,header a:active,#header-container a:hover,#header-container a:focus,#trans-menu.small a:hover,#trans-menu.small a:active'),
 						'subtitle'	=> __('Site Content Hover Link Color (default: #70b9a0)', 'redux-framework-demo'),
@@ -705,7 +731,6 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'id'     => 'section-end',
 						'type'   => 'section',
 						'indent' => false,
-						'hidden' => ($evolver_options['collapsable-header-button'] == 1) ? true : false,
 					),
 					array(
 						'id'   =>'section-start',
@@ -965,11 +990,11 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					),
 					array(
 						'id'	=> 'scroll-down-line',
-						'type'	=> 'checkbox',
+						'type'	=> 'switch',
 						'title'	=> __('Scroll Down Line', 'redux-framework-demo'),
 						'subtitle'	=> __('Adds a line on the scroll down.', 'redux-framework-demo'),
 						'desc'	=> __('', 'redux-framework-demo'),
-						'default'	=> 1
+						'default'	=> false
 					),
 					array(
 						'id'	=> 'scroll-down-line-color',
@@ -980,6 +1005,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'default'	=> '#70b9a0',
 						'validate'	=> 'color',
 						'transparent'	=> false,
+						'required' => array('scroll-down-line', 'equals', true),
 					),
 					array(
 						'id'     => 'section-end',
@@ -1097,17 +1123,26 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					),
 					array(
 						'id' => 'content-posts-container',
-						'type'	=> 'checkbox',
+						'type'	=> 'switch',
 						'title'	=> __('Show Posts on Front Page', 'redux-framework-demo'),
 						'subtitle'	=> __('', 'redux-framework-demo'),
 						'desc'	=> __('', 'redux-framework-demo'),
-						'default' => 1
+						'default' => true
+					),
+					array(
+						'id' => 'content-posts-section-page-container',
+						'type'	=> 'switch',
+						'title'	=> __('Show Posts on Section Container Template', 'redux-framework-demo'),
+						'subtitle'	=> __('', 'redux-framework-demo'),
+						'desc'	=> __('', 'redux-framework-demo'),
+						'default' => true,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					// Blog Posts Options
 					array(
 						'id' => 'blog-posts-number-of',
 						'type' => 'slider',
-						//'hidden' => ($evolver_options['content-posts-container'] == 0) ? true : false,
+						'required' => array('content-posts-container', 'equals', true),
 						'title'	=> __('Number of Blog Posts', 'redux-framework-demo'),
 						'subtitle'	=> __('Set the number of blog posts to generate', 'redux-framework-demo'),
 						'desc'	=> __('Do not choose 5 or 7 unless you want to be uneven on the bottom.', 'redux-framework-demo'),
@@ -1124,6 +1159,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'title' => __('Front Page Blog Posts Category', 'redux-framework-demo'),
 						'subtitle'  => __('Write which category of blog posts that will appear on front page.', 'redux-framework-demo'),
 						'desc' => __('eg: category1, category2, ...', 'redux-framework-demo'),
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id' => 'color-blog-posts-background',
@@ -1138,6 +1174,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'background-image'	=> false,
 						'transparent'	=> false,
 						'background-size'	=> false,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id' => 'color-blog-posts-header',
@@ -1148,6 +1185,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'validate'	=> 'color',
 						'output' => array('.home #content #posts-section .post-item .has-title,.page-template-template-01home #content #posts-section .post-item .has-item,.page-template-template-04sctcontainer #blog-section #posts-section .post-item .has-item'), // An array of CSS selectors to apply this font style to dynamically
 						'transparent'	=> false,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id' => 'color-blog-posts-header-hover',
@@ -1158,6 +1196,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'validate'	=> 'color',
 						'output' => array('.home #content #posts-section .post-item .has-title:hover,.page-template-template-01home #content #posts-section .post-item .has-item:hover,.page-template-template-04sctcontainer #blog-section #posts-section .post-item .has-item:hover'), // An array of CSS selectors to apply this font style to dynamically
 						'transparent'	=> false,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id' => 'color-blog-posts-read-more-bg',
@@ -1167,6 +1206,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'default'	=> '#70b9a0',
 						'validate'	=> 'color',
 						'transparent'	=> false,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id' => 'color-blog-posts-read-more-bg-hover',
@@ -1176,6 +1216,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'default'	=> '#70b9a0',
 						'validate'	=> 'color',
 						'transparent'	=> false,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id' => 'color-blog-posts-read-more-text',
@@ -1185,6 +1226,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'default'	=> '#70b9a0',
 						'validate'	=> 'color',
 						'transparent'	=> false,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id' => 'color-blog-posts-read-more-text-hover',
@@ -1194,6 +1236,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'default'	=> '#f8f8f8',
 						'validate'	=> 'color',
 						'transparent'	=> false,
+						'required' => array('content-posts-container', 'equals', true),
 					),
 					array(
 						'id'     => 'section-end',
@@ -1284,6 +1327,161 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					),
 				),
 			);
+
+			/* ==============================
+				Intro
+			============================== */
+			$this->sections[] = array(
+				'title'     => __('Intro Page', 'redux-framework-demo'),
+				'desc'      => __('Set these parameters to customize the intro page.', 'redux-framework-demo'),
+				'icon'      => 'el el-video-chat',
+				'fields'    => array(
+					array(
+						'id' => 'intro-loader',
+						'type'	=> 'switch',
+						'title'	=> __('Activate Intro Loader', 'redux-framework-demo'),
+						'subtitle'	=> __('', 'redux-framework-demo'),
+						'desc'	=> __('', 'redux-framework-demo'),
+						'default' => false
+					),
+					array(
+						'id'	=> 'intro-video-button',
+						'type'	=> 'switch',
+						'title'	=> __('Upload Link?', 'redux-framework-demo'),
+						'subtitle'	=> __('Do you want to upload an intro video instead?', 'redux-framework-demo'),
+						'desc'	=> __('', 'redux-framework-demo'),
+						'default'	=> false,
+						'required' => array('intro-loader', 'equals', true)
+					),
+					array(
+						'id'	=> 'intro-video',
+						'type'	=> 'text',
+						'title'     => __('Intro Video', 'redux-framework-demo'),
+						'validate'  => 'url',
+						'desc'      => __('Place your video link here.', 'redux-framework-demo' ),
+						'subtitle'  => __('', 'redux-framework-demo'),
+						'required' => array(
+							array('intro-loader', 'equals', true),
+							array('intro-video-button', 'equals', false)
+						),
+					),
+					array(
+						'id'	=> 'intro-video-upload',
+						'type'	=> 'media',
+						'title'     => __('Intro Video Upload', 'redux-framework-demo'),
+						'compiler' 	=> 'true',
+						'desc'      => __('Upload your video here instead.', 'redux-framework-demo' ),
+						'mode'		=> false, // Can be set to false to allow any media type, or can also be set to any mime type.
+						'placeholder' => __( 'Video Upload', 'redux-framework-demo' ),
+						'required' => array(
+							array('intro-loader', 'equals', true),
+							array('intro-video-button', 'equals', true)
+						),
+					),
+					array(
+						'id'	=> 'intro-text',
+						'type'	=> 'text',
+						'title'     => __('Intro Text', 'redux-framework-demo'),
+						'validate'  => 'text',
+						'desc'      => __('Type your video title here. Or anything, really.', 'redux-framework-demo' ),
+						'subtitle'  => __('', 'redux-framework-demo'),
+						'required' => array('intro-loader', 'equals', true)
+					),
+				)
+			);
+            
+			/* ==============================
+				Page Loader
+			============================== */
+			$this->sections[] = array(
+				'title'     => __('Page Loader', 'redux-framework-demo'),
+				'desc'      => __('Set these parameters to customize the loading screen in between pages.', 'redux-framework-demo'),
+				'icon'      => 'el el-screen',
+				'fields'    => array(
+					array(
+						'id' => 'page-loader',
+						'type'	=> 'switch',
+						'title'	=> __('Activate Page Loader', 'redux-framework-demo'),
+						'subtitle'	=> __('', 'redux-framework-demo'),
+						'desc'	=> __('', 'redux-framework-demo'),
+						'default' => false
+					),
+					array(
+						'id' => 'loader-background',
+						'type'	=> 'background',
+						'output'	=> array('#loader'),
+						'title'	=> __('Button Background', 'redux-framework-demo'),
+						'subtitle'	=> __('Handles all button colors (default: #242424)', 'redux-framework-demo'),
+						'default'	=> array( 'background-color' => '#242424' ),
+						'background-repeat'	=> false,
+						'background-attachment'	=> false,
+						'background-position'	=> false,
+						'background-image'	=> false,
+						'transparent'	=> false,
+						'background-size'	=> false,
+						'required' => array('page-loader', 'equals', true),
+					),
+					array(
+						'id'	=> 'loader-image',
+						'type'	=> 'media',
+						'title'     => __('Loader Image', 'redux-framework-demo'),
+						'compiler'  => 'true',
+						'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+						'desc'      => __('Upload any image you would like. This can even be an overlay of the video you want to use.', 'redux-framework-demo' ),
+						'subtitle'  => __('', 'redux-framework-demo'),
+						'required' => array('page-loader', 'equals', true),
+					),
+					array(
+						'id'	=> 'loader-mobile-image',
+						'type'	=> 'media',
+						'title'     => __('Loader Mobile Image', 'redux-framework-demo'),
+						'compiler'  => 'true',
+						'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+						'desc'      => __('Upload any image you would like. This can even be an overlay of the video you want to use.', 'redux-framework-demo' ),
+						'subtitle'  => __('', 'redux-framework-demo'),
+						'required' => array('page-loader', 'equals', true),
+					),
+				)
+			);
+
+			/* ==============================
+				Playlist
+			============================== */
+			$this->sections[] = array(
+				'title'     => __('Playlist', 'redux-framework-demo'),
+				'desc'      => __('Set the playlist for the player.', 'redux-framework-demo'),
+				'icon'      => 'el el-video',
+				'fields'    => array(
+					array(
+						'id'	=> 'site-playlist',
+						'type'	=> 'repeater',
+						'title'	=> __('Music Player Tracklist', 'redux-framework-demo'), 
+						'subtitle'	=> __('Add your links to your music that you want playing here.', 'redux-framework-demo'),
+						'desc'  => __('', 'redux-framework-demo'),
+						'limit' => 6,
+						'grouped_values' => false,
+						'fields' => array(
+							array(
+								'id' => 'title_field',
+								'type' => 'text',
+								'placeholder' => __( 'Track Title', 'redux-framework-demo' ),
+							),
+							array(
+								'id' => 'artist_field',
+								'type' => 'text',
+								'placeholder' => __( 'Artist Name', 'redux-framework-demo' ),
+							),
+							array(
+								'id' => 'mp3_field',
+								'type' => 'media',
+								'compiler'  => 'true',
+								'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+								'placeholder' => __( 'MP3 Link', 'redux-framework-demo' ),
+							),
+						),					
+					),
+				)
+			);
             
 			/* ==============================
 				Footer
@@ -1295,11 +1493,11 @@ if (!class_exists('Redux_Framework_sample_config')) {
 	            'fields'    => array(
 					array(
 						'id' => 'footer-sitemap',
-						'type'	=> 'checkbox',
+						'type'	=> 'switch',
 						'title'	=> __('Show Sitemap on Footer', 'redux-framework-demo'),
 						'subtitle'	=> __('', 'redux-framework-demo'),
 						'desc'	=> __('', 'redux-framework-demo'),
-						'default' => 1
+						'default' => false
 					),
 					array(
 						'id'	=> 'color-footer-background',
@@ -1314,6 +1512,7 @@ if (!class_exists('Redux_Framework_sample_config')) {
 						'background-image'	=> false,
 						'transparent'	=> false,
 						'background-size'	=> false,
+						'required' => array('footer-sitemap', 'equals', true),
 					),
 					array(
 						'id'	=> 'color-footer-bottom-background',
@@ -1408,11 +1607,11 @@ if (!class_exists('Redux_Framework_sample_config')) {
 					),
 					array(
 						'id'	=> 'footer-show-up-button',
-						'type'	=> 'checkbox',
+						'type'	=> 'switch',
 						'title'	=> __('Display "To The Top" Button', 'redux-framework-demo'),
 						'subtitle'	=> __('', 'redux-framework-demo'),
 						'desc'	=> __('', 'redux-framework-demo'),
-						'default'	=> 1
+						'default'	=> true
 					),
 					// Social Media Options
 					array(
